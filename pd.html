@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Competencias - Descripción de Puesto</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <!-- 🟦 Barra lateral izquierda -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="material-icons-outlined">emoji_objects</span>
+                <h2>PlayLearn</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><span class="material-icons-outlined">assignment</span> Descripción de Puesto</li>
+                    <li><span class="material-icons-outlined">psychology</span> DNC</li>
+                    <li><span class="material-icons-outlined">rocket_launch</span> Onboarding</li>
+                    <li><span class="material-icons-outlined">equalizer</span> Reportes</li>
+                    <li><span class="material-icons-outlined">settings</span> Configuración</li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <span class="material-icons-outlined">logout</span> Cerrar sesión
+            </div>
+        </aside>
+
+        <!-- 🟨 Contenido principal -->
+        <main class="main-content">
+            <!-- 🧭 Encabezado -->
+            <header class="topbar">
+                <div class="search-box">
+                    <span class="material-icons-outlined">search</span>
+                    <input type="text" placeholder="Buscar...">
+                </div>
+                <div class="topbar-actions">
+                    <span class="material-icons-outlined">language</span>
+                    <span class="material-icons-outlined">notifications</span>
+                    <img src="https://i.pravatar.cc/40" alt="Perfil" class="profile-pic">
+                    <span class="material-icons-outlined">settings</span>
+                </div>
+            </header>
+
+            <!-- 📝 Sección del módulo Descripción de Puesto -->
+            <!-- 📝 Sección del módulo Descripción de Puesto -->
+<section class="descripcion-container">
+
+<!-- 🟩 Banner Plan de Desarrollo -->
+<div class="intro-banner">
+  <div class="intro-img">
+    <img src="images/job hunt-pana.png" alt="Ilustración plan de desarrollo">
+  </div>
+  <div class="intro-text">
+    <h1>Bienvenido al módulo <strong>Plan de Desarrollo</strong></h1>
+    <p>
+      En este módulo podrás definir <strong>estrategias de entrenamiento</strong> para cerrar las brechas de habilidades identificadas durante la evaluación de competencias 🚀.
+    </p>
+    <ul>
+      <li>🧭 <strong>Selecciona</strong> el método de entrenamiento más adecuado para cada habilidad.</li>
+      <li>📅 <strong>Establece</strong> frecuencia, fechas y responsables.</li>
+      <li>✅ <strong>Da seguimiento</strong> a la ejecución del plan de desarrollo.</li>
+    </ul>
+    <br>
+    <h3>📚 Métodos de entrenamiento:</h3>
+    <ul>
+      <li><strong>Shadow:</strong> El colaborador observa a un experto realizar la actividad.</li>
+      <li><strong>Coaching:</strong> Entrenamiento personalizado con guía directa.</li>
+      <li><strong>Mentoring:</strong> Acompañamiento de un mentor experto para desarrollo profesional.</li>
+      <li><strong>Buddy:</strong> Un compañero guía al nuevo colaborador en su integración.</li>
+      <li><strong>Project:</strong> Asignación de proyectos prácticos para fortalecer habilidades.</li>
+      <li><strong>Read:</strong> Lectura de documentos oficiales, manuales, procedimientos, etc.</li>
+      <li><strong>Course:</strong> Capacitaciones en plataformas digitales o presenciales.</li>
+    </ul>
+  </div>
+</div>
+
+
+
+<!-- 🟨 Sección: Plan de Desarrollo -->
+<section class="plan-desarrollo-container">
+  <div class="bloque-contenedor">
+    <h1>📈 Plan de Desarrollo</h1>
+    <p>
+      👋 En este módulo podrás registrar y dar seguimiento a las acciones de entrenamiento
+      para fortalecer las habilidades de los colaboradores.  
+      📅 Define el método de entrenamiento, frecuencia y fechas.  
+      ✅ Marca si se cumplió para llevar un control claro y visual.
+    </p>
+  </div>
+
+  <div class="plan-grid" id="planGrid">
+    <!-- Encabezados -->
+    <div class="header">#</div>
+    <div class="header">Habilidad a desarrollar</div>
+    <div class="header">Método de entrenamiento</div>
+    <div class="header">Frecuencia</div>
+    <div class="header">Periodicidad</div>
+    <div class="header">Fecha inicial</div>
+    <div class="header">Fecha final</div>
+    <div class="header">Se cumplió</div>
+
+    <!-- Fila 1 -->
+    <div class="celda">1</div>
+    <div class="celda"></div>
+    <div class="celda">
+      <select>
+        <option value="">Seleccione...</option>
+        <option>Shadow</option>
+        <option>Coaching</option>
+        <option>Mentoring</option>
+        <option>Buddy</option>
+        <option>Project</option>
+        <option>Read</option>
+        <option>Course</option>
+      </select>
+    </div>
+    <div class="celda">
+      <select>
+        <option value="">Seleccione...</option>
+        <option>1 vez</option>
+        <option>2 veces</option>
+        <option>3 veces</option>
+        <option>4 veces</option>
+        <option>5 veces</option>
+        <option>6 veces</option>
+        <option>7 veces</option>
+        <option>8 veces</option>
+        <option>9 veces</option>
+        <option>10 veces</option>
+      </select>
+    </div>
+    <div class="celda">
+      <select>
+        <option value="">Seleccione...</option>
+        <option>Diario</option>
+        <option>Semanal</option>
+        <option>Quincenal</option>
+        <option>Mensual</option>
+        <option>Bimestral</option>
+        <option>Trimestral</option>
+      </select>
+    </div>
+    <div class="celda"><input type="date"></div>
+    <div class="celda"><input type="date"></div>
+    <div class="celda">
+      <select>
+        <option value="">Seleccione...</option>
+        <option>Sí</option>
+        <option>No</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Botón agregar habilidad -->
+  <button class="btn-guardar" id="agregarHabilidadBtn">
+    <span class="material-icons-outlined">add</span> Agregar habilidad
+  </button>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button id="btnTerminarPD">Terminar PD</button>
+
+
+</section>
+
+        </main>
+    </div>
+
+    <script src="pd.js"></script>
+
+</body>
+</html>

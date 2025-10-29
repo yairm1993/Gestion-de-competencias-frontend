@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Gestión de Vacantes</title>
+    <link rel="stylesheet" href="styles.css">
+     <!-- Librería para modales -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    
+  <!-- 🌟 Aquí se insertará la barra lateral y el encabezado -->
+<div id="navbar"></div>
+
+
+            <!-- 📊 Banner Introductorio -->
+            <div class="main-content">
+              <div class="intro-banner">
+                  <div class="intro-img">
+                      <img src="images/Hiring-amico.png" alt="Ilustración dashboard">
+                  </div>
+                  <div class="intro-text">
+                      <h1>Bienvenido al <strong>Dashboard de Gestión de Competencias</strong></h1>
+                      <p>
+                          Aquí podrás crear, dar seguimiento y controlar todo el flujo desde una vacante,
+                           hasta el cierre del onboarding ✅.
+                      </p>
+                      <ul>
+                          <li>🆕 Crear vacante (reclutador)</li>
+                          <li>✍️ Llenar descripción de puesto (requisitor)</li>
+                          <li>👥 Registrar terna y aplicar DNC</li>
+                          <li>🚀 Pasar al plan de desarrollo y cerrar onboarding</li>
+                      </ul>
+                  </div>
+              </div>
+              <!-- 📌 FILTROS -->
+              <div class="filtros-bar bloque-contenedor">
+                  <input type="text" placeholder="Filtrar por vacante..." id="filtroVacante">
+                  <input type="text" placeholder="Filtrar por requisitor..." id="filtroRequisitor">
+                  <select id="filtroEstatus">
+                      <option value="">Filtrar por estatus</option>
+                      <option>Cargar Descripción de Puesto</option>
+                      <option>Registrar Terna</option>
+                      <option>Realizar Detección de necesidades</option>
+                      <option>En Onboarding</option>
+                      <option>Plan de desarrollo</option>
+                      <option>Terminado</option>
+                  </select>
+                  <select id="filtroTipoProceso">
+                      <option value="">Filtrar por tipo de proceso</option>
+                      <option value="Reclutamiento">Reclutamiento interno</option>
+                      <option value="Cambio interno">Reclutamiento externo</option>
+                      <option value="Cambio interno">Ambos</option>
+                  </select>
+              </div>
+              <!-- 📌 Matriz de Vacantes -->
+              <section class="bloque-contenedor">
+                  <div class="header-vacantes">
+                      <h2>Matriz de Gestión de Competencias</h2>
+                      <button class="btn-habilidad agregar" id="btnCrearVacante">
+                          <span class="material-icons-outlined">add</span> Nuevo Desarrollo de Talento
+                      </button>
+                  </div>
+                  <table class="tabla-vacantes">
+                      <thead>
+                          <tr>
+                            <th>Vacante</th>
+                            <th>Área</th>
+                            <th>Requisitor</th>
+                            <th>Tipo Proceso</th>
+                            <th>Tipo Contratación</th>
+                            <th>Prioridad</th>
+                            <th>Fecha Estimada</th>
+                            <th>Estatus</th>
+                            <th>Comentarios</th>
+                            <th>Acción</th>
+                          </tr>
+                      </thead>
+                      <tbody id="listaVacantes">
+                          <!-- Vacantes dinámicas -->
+                      </tbody>
+                  </table>
+              </section>
+                      </main>
+                  </div>
+              
+                  <!-- 📌 Modal para nueva vacante -->
+                  <div class="modal-nueva-vacante" id="modalVacante">
+                    <div class="modal-vacante-content">
+                      <span class="material-icons-outlined modal-close" id="cerrarModalVacante">close</span>
+                      <h2>Nueva Vacante</h2>
+              
+                      <div class="form-vacante">
+                        <div>
+              <label>Nombre de la vacante <span style="color:#f00;">(Debe ser idéntico a la Descripción de Puesto)</span></label>
+              <input type="text" id="inputNombreVacante">
+                        </div>
+                        <div>
+              <label>Área:</label>
+              <input type="text" id="inputAreaVacante">
+                        </div>
+                        <div>
+              <label>Requisitor:</label>
+              <input type="text" id="inputRequisitorVacante">
+                        </div>
+              <div>
+                  <label>Tipo de proceso:</label>
+                  <select id="inputTipoProceso">
+                      <option value="">Selecciona...</option>
+                      <option value="Reclutamiento">Reclutamiento Interno</option>
+                      <option value="Cambio interno">Reclutamiento Externo</option>
+                      <option value="Cambio interno">Ambos</option>
+                  </select>
+              </div>
+              
+                        <div>
+              <label>Tipo de contratación:</label>
+              <select id="inputTipoContratacion">
+                <option value="">Selecciona...</option>
+                <option>Temporal</option>
+                <option>Indefinido</option>
+                <option>Proyecto</option>
+                <option>Practicante</option>
+              </select>
+                        </div>
+                        <div>
+              <label>Prioridad:</label>
+              <select id="inputPrioridad">
+                <option value="">Selecciona...</option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+                        </div>
+                        <div>
+              <label>Fecha estimada de ingreso:</label>
+              <input type="date" id="inputFechaEstimada">
+                        </div>
+                        <div>
+              <label>Comentarios de estatus:</label>
+              <textarea id="inputComentarios" placeholder="Ej. En entrevistas, en validación de candidato..."></textarea>
+                        </div>
+                      </div>
+              
+                      <div class="modal-actions">
+                        <button class="btn-habilidad eliminar" id="cancelarModalVacante">Cancelar</button>
+                        <button type="button" class="btn-habilidad agregar" id="btnGuardarVacante">Guardar</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+    <script src="dashboard.js"></script>
+    <script>
+      // 📥 Cargar el componente de la barra lateral y encabezado
+      fetch('components/navbar.html')
+        .then(response => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        })
+        .catch(error => console.error('❌ Error cargando navbar:', error));
+    </script>
+</body>
+</html>

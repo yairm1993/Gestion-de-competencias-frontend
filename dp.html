@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Competencias - Descripción de Puesto</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <!-- 🟦 Barra lateral izquierda -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="material-icons-outlined">emoji_objects</span>
+                <h2>PlayLearn</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><span class="material-icons-outlined">assignment</span> Descripción de Puesto</li>
+                    <li><span class="material-icons-outlined">psychology</span> DNC</li>
+                    <li><span class="material-icons-outlined">rocket_launch</span> Onboarding</li>
+                    <li><span class="material-icons-outlined">equalizer</span> Reportes</li>
+                    <li><span class="material-icons-outlined">settings</span> Configuración</li>
+                </ul>
+            </nav>
+            <div class="logout">
+                <span class="material-icons-outlined">logout</span> Cerrar sesión
+            </div>
+        </aside>
+
+        <!-- 🟨 Contenido principal -->
+        <main class="main-content">
+            <!-- 🧭 Encabezado -->
+            <header class="topbar">
+                <div class="search-box">
+                    <span class="material-icons-outlined">search</span>
+                    <input type="text" placeholder="Buscar...">
+                </div>
+                <div class="topbar-actions">
+                    <span class="material-icons-outlined">language</span>
+                    <span class="material-icons-outlined">notifications</span>
+                    <img src="https://i.pravatar.cc/40" alt="Perfil" class="profile-pic">
+                    <span class="material-icons-outlined">settings</span>
+                </div>
+            </header>
+
+            <!-- 📝 Sección del módulo Descripción de Puesto -->
+            <!-- 📝 Sección del módulo Descripción de Puesto -->
+<section class="descripcion-container">
+
+    <!-- 🟦 1. Bienvenida -->
+    <!-- 🟦 1. Banner de introducción -->
+<div class="intro-banner">
+  <div class="intro-img">
+    <img src="images/Hiring-amico.png" alt="Ilustración de contratación">
+  </div>
+  <div class="intro-text">
+    <h1>Bienvenido al módulo <strong>Descripción de Puesto</strong></h1>
+    <p>
+      En este módulo podrás registrar las habilidades clave de la posición para 
+      evaluar candidatos de forma objetiva y generar su plan de desarrollo automáticamente.
+    </p>
+    <ul>
+      <li>📌 <strong>Transfiere</strong> las habilidades directamente de la descripción actual.</li>
+      <li>🧭 <strong>Evalúa</strong> candidatos internos y externos con criterios claros.</li>
+      <li>🚀 <strong>Genera</strong> automáticamente planes de desarrollo personalizados.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 📌 Información de la vacante -->
+<div class="info-vacante-dp">
+  
+</div>
+
+
+
+    <!-- 🟨 2. Información general -->
+    <div class="bloque-contenedor">
+        <h2>📋 Información de la vacante</h2>
+
+  <label>Nombre de la vacante:</label>
+  <input type="text" id="nombreVacante" readonly>
+
+  <label>Área:</label>
+  <input type="text" id="areaVacante" readonly>
+
+  <label>Requisitor:</label>
+  <input type="text" id="requisitorVacante" readonly>
+
+  <label>Tipo de Proceso:</label>
+  <input type="text" id="tipoProcesoVacante" readonly>
+
+  <label>Tipo de Contratación:</label>
+  <input type="text" id="tipoContratacionVacante" readonly>
+
+  <label>Prioridad:</label>
+  <input type="text" id="prioridadVacante" readonly>
+
+  <label>Fecha Estimada:</label>
+  <input type="text" id="fechaEstimadaVacante" readonly>
+
+  <label>Comentarios:</label>
+  <textarea id="comentariosVacante" readonly></textarea>
+    </div>
+
+    <!-- 🟩 3. Habilidades requeridas -->
+    <div class="bloque-contenedor">
+    <h2>Habilidades requeridas</h2>
+    <div class="habilidades">
+        <div class="habilidad-bloque">
+            <label>Habilidades básicas:</label>
+            <textarea placeholder="Ej. NOMs, ISO, seguridad..."></textarea>
+            <div class="habilidad-actions">
+                <button class="btn-habilidad agregar">
+                    <span class="material-icons-outlined">add</span> Agregar habilidad
+                </button>
+                <button class="btn-habilidad eliminar">
+                    <span class="material-icons-outlined">remove</span> Eliminar habilidad
+                </button>
+            </div>
+        </div>
+
+        <div class="habilidad-bloque">
+            <label>Habilidades específicas:</label>
+            <textarea placeholder="Ej. herramientas técnicas, software..."></textarea>
+            <div class="habilidad-actions">
+                <button class="btn-habilidad agregar">
+                    <span class="material-icons-outlined">add</span> Agregar habilidad
+                </button>
+                <button class="btn-habilidad eliminar">
+                    <span class="material-icons-outlined">remove</span> Eliminar habilidad
+                </button>
+            </div>
+        </div>
+
+        <div class="habilidad-bloque">
+            <label>Habilidades blandas:</label>
+            <textarea placeholder="Ej. liderazgo, comunicación, trabajo en equipo..."></textarea>
+            <div class="habilidad-actions">
+                <button class="btn-habilidad agregar">
+                    <span class="material-icons-outlined">add</span> Agregar habilidad
+                </button>
+                <button class="btn-habilidad eliminar">
+                    <span class="material-icons-outlined">remove</span> Eliminar habilidad
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<button class="btn-habilidad" id="btnGuardarDP">Guardar habilidades</button>
+
+   <!-- 🟦 4. Registro de colaboradores / terna -->
+<div class="bloque-contenedor bloque-terna">
+    <h2>Registro de colaboradores o terna</h2>
+    <p>✍️ Agrega aquí a los colaboradores internos o postulantes externos que serán evaluados para esta posición.</p>
+    
+   <div class="terna-grid">
+    <div>
+        <label>Nombre del colaborador:</label>
+        <input type="text" placeholder="Ej. Juan Pérez">
+    </div>
+
+    <div>
+        <label>Tipo:</label>
+        <select>
+            <option value="">Seleccione...</option>
+            <option value="interno">Interno</option>
+            <option value="externo">Externo</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Currículum (PDF):</label>
+        <input type="file" accept=".pdf" class="input-cv">
+    </div>
+
+    <div class="terna-actions">
+        <label>&nbsp;</label>
+        <div class="botones-accion">
+            <button class="btn-vercv" disabled>
+                <span class="material-icons-outlined">description</span> Ver CV
+            </button>
+            <button class="btn-habilidad eliminar-candidato">
+                <span class="material-icons-outlined">delete</span> Eliminar
+            </button>
+        </div>
+    </div>
+
+</div>
+
+
+    <button class="btn-habilidad agregar" id="agregarCandidatoBtn">
+        <span class="material-icons-outlined">person_add</span> Agregar otro candidato
+    </button>
+
+    <!-- ✅ Botones de confirmación y edición -->
+<div class="botones-finales">
+    <button class="btn-confirmar" id="btnConfirmarRegistro">
+        <span class="material-icons-outlined">check_circle</span> Terminar registro
+    </button>
+
+    <button class="btn-confirmar editar" id="btnEditarRegistro">
+        <span class="material-icons-outlined">edit</span> Editar registro
+    </button>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- 📄 Modal visor de PDF -->
+<div class="pdf-modal" id="pdfModal">
+  <div class="pdf-modal-content">
+    <button class="pdf-close" id="cerrarPdfBtn">
+      <span class="material-icons-outlined">close</span>
+    </button>
+    <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+  </div>
+</div>
+
+
+
+
+<button class="btn-guardar">
+        <span class="material-icons-outlined">save</span> Comenzar evaluación de habilidades
+    </button>
+
+</section>
+
+        </main>
+    </div>
+
+    
+
+    <!-- ✅ Modal de confirmación -->
+<div class="modal-confirmacion" id="modalConfirmacion">
+  <div class="modal-confirmacion-content">
+    <span class="material-icons-outlined modal-close" id="cerrarModalConfirmacion">close</span>
+    <div class="modal-icono" id="modalIcono"></div>
+    <h2 id="modalTitulo"></h2>
+    <p id="modalMensaje"></p>
+    <button class="btn-confirmar-modal" id="cerrarModalBtn">Aceptar</button>
+  </div>
+</div>
+
+<script src="dp.js"></script>
+</body>
+</html>

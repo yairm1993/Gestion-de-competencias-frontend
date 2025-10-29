@@ -1,0 +1,1206 @@
+/* ===============================
+🎨 GLOBAL
+=============================== */
+:root {
+  --azul-fondo: #2b4cff;
+  --azul-hover: #4d65ff;
+  --gris-claro: #f5f6fa;
+  --blanco: #ffffff;
+  --gris-texto: #444;
+  --fuente: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente);
+  background-color: var(--gris-claro);
+  color: var(--gris-texto);
+    margin: 0;
+  padding: 0;
+}
+
+/* ===============================
+🧭 Ajuste de espacio por Topbar
+=============================== */
+body {
+  padding-top: 70px; /* 👈 Igual a la altura de tu topbar */
+}
+
+/* Esto asegura que el contenido no quede pegado ni tapado */
+.main-content {
+  margin-left: 240px;  /* 👈 mismo ancho que la sidebar */
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* ===============================
+📐 LAYOUT GENERAL
+=============================== */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===============================
+🟦 SIDEBAR IZQUIERDA
+=============================== */
+.sidebar {
+  background-color: var(--azul-fondo);
+  color: var(--blanco);
+  width: 240px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 10px;
+}
+
+.logo h2 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.sidebar nav ul li {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  gap: 10px;
+  transition: background 0.3s;
+}
+
+.sidebar nav ul li.active,
+.sidebar nav ul li:hover {
+  background-color: var(--azul-hover);
+}
+
+.logout {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout:hover {
+  background-color: var(--azul-hover);
+}
+
+/* ===============================
+🧭 TOPBAR
+=============================== */
+.main-content {
+  margin-left: 240px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  background-color: var(--blanco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: var(--gris-claro);
+  padding: 5px 10px;
+  border-radius: 20px;
+  width: 300px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+
+/* ===============================
+📝 DESCRIPCIÓN DE PUESTO - NUEVA ESTRUCTURA
+=============================== */
+.descripcion-container {
+  padding: 30px;
+}
+
+/* ✅ Bloques principales */
+.bloque-contenedor {
+  background-color: #fff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.bloque-contenedor h1,
+.bloque-contenedor h2 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.bloque-contenedor p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.bloque-contenedor ul {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.bloque-contenedor ul li {
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+/* ===============================
+📋 FORMULARIOS
+=============================== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.form-grid input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* ===============================
+💡 HABILIDADES
+=============================== */
+.habilidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.habilidades textarea {
+  width: 100%;
+  padding: 10px;
+  height: 100px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+/* ===============================
+💾 BOTÓN GUARDAR
+=============================== */
+.btn-guardar {
+  /*background-color: var(--azul-fondo);*/
+  background-color: #28a745;
+  color: var(--blanco);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  font-family: var(--fuente);
+}
+
+.btn-guardar:hover {
+  background-color: #309447;
+  font-family: var(--fuente);
+}
+
+.habilidad-bloque {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.habilidad-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-habilidad {
+  background-color: var(--azul-fondo);
+  color: var(--blanco);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  font-family: var(--fuente);
+}
+
+.btn-habilidad.eliminar {
+  background-color: #d9534f;
+  font-family: var(--fuente);
+}
+
+.btn-habilidad:hover {
+  background-color: var(--azul-hover);
+  font-family: var(--fuente);
+}
+
+.btn-habilidad.eliminar:hover {
+  background-color: #c9302c;
+  font-family: var(--fuente);
+}
+
+/* ===============================
+👥 REGISTRO DE COLABORADORES / TERNA
+=============================== */
+
+.terna-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.terna-grid label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.terna-grid input[type="text"],
+.terna-grid select,
+.terna-grid input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+.input-cv {
+  cursor: pointer;
+}
+
+.btn-vercv {
+  background-color: var(--azul-fondo);
+  color: var(--blanco);
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-vercv:hover:enabled {
+  background-color: var(--azul-hover);
+}
+
+.btn-vercv:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* ===============================
+👥 BLOQUE DE TERNA (SEPARADO)
+=============================== */
+.bloque-terna {
+  margin-top: 25px; /* separa visualmente de habilidades */
+}
+
+.terna-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.terna-grid label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.terna-grid input[type="text"],
+.terna-grid select,
+.terna-grid input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+.input-cv {
+  cursor: pointer;
+}
+
+.btn-vercv {
+  background-color: var(--azul-fondo);
+  color: var(--blanco);
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-vercv:hover:enabled {
+  background-color: var(--azul-hover);
+}
+
+.btn-vercv:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* ===============================
+📄 MODAL VISOR PDF
+=============================== */
+.pdf-modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.pdf-modal.active {
+  display: flex;
+}
+
+.pdf-modal-content {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-close {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #444;
+  font-size: 28px;
+  z-index: 10;
+}
+
+.pdf-close:hover {
+  color: #000;
+}
+
+.pdf-modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ===============================
+✅ MODAL DE CONFIRMACIÓN DE REGISTRO
+=============================== */
+.modal-confirmacion {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-confirmacion.active {
+  display: flex;
+}
+
+.modal-confirmacion-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-confirmacion-content h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.modal-confirmacion-content p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.modal-icono {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.modal-icono.success {
+  color: #28a745; /* verde éxito */
+}
+
+.modal-icono.warning {
+  color: #f0ad4e; /* amarillo advertencia */
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #777;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.btn-confirmar-modal {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-confirmar-modal:hover {
+  background-color: #218838;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===============================
+✅ BOTÓN CONFIRMAR REGISTRO
+=============================== */
+.btn-confirmar {
+  background-color: #28a745;
+  color: var(--blanco);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: var(--fuente);
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.btn-confirmar:hover {
+  background-color: #218838;
+}
+
+/* ===============================
+🧭 Acciones por candidato
+=============================== */
+.terna-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.eliminar-candidato {
+  background-color: #d9534f;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.eliminar-candidato:hover {
+  background-color: #c9302c;
+}
+
+/* ✏️ Botón Editar registro */
+.btn-confirmar.editar {
+  background-color: #f0ad4e;
+  margin-top: 10px;
+}
+
+.btn-confirmar.editar:hover {
+  background-color: #ec971f;
+}
+
+/* 🧭 Acciones de candidato en una fila */
+.terna-actions .botones-accion {
+  display: flex;
+  gap: 8px;
+}
+
+.terna-actions button {
+  flex: 1;
+}
+
+/* ✨ Botones finales uno al lado del otro */
+.botones-finales {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ===============================
+🟦 Intro Banner (Hero)
+=============================== */
+.intro-banner {
+  display: flex;
+  gap: 25px;
+  background: #f5f7ff; /* azul clarito */
+  padding: 30px;
+  border-radius: 12px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.intro-icon span {
+  font-size: 60px;
+  color: var(--azul-fondo);
+}
+
+.intro-text h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2E2E2E;
+}
+
+.intro-text p {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.intro-text ul {
+  padding-left: 20px;
+}
+
+.intro-text ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===============================
+📊 DNC TABLA DE EVALUACIÓN*/
+
+.dnc-grid {
+  display: grid;
+  grid-template-columns: 150px 1fr 130px repeat(2, 120px 120px);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  border: 1px solid #E0E3EB; /* separadores */
+}
+
+.dnc-grid > div {
+  border: 1px solid #E0E3EB; /* separadores */
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #2E2E2E; /* texto principal */
+}
+
+/* Encabezados */
+.header {
+  background-color: #4C5FD5; /* azul violeta */
+  font-weight: 600;
+  color: #FFFFFF; /* texto blanco */
+}
+
+.subheader {
+  background-color: #EFF1FA; /* azul muy claro */
+  font-weight: 500;
+  font-size: 13px;
+  color: #2E2E2E;
+}
+
+/* Tipos de habilidad */
+.tipo {
+  font-weight: 600;
+}
+
+.tipo-verde {
+  background-color: #E8EDFF; /* básicas */
+}
+
+.tipo-azul {
+  background-color: #EFE7FF; /* específicas */
+}
+
+.tipo-amarillo {
+  background-color: #E6F6FF; /* blandas */
+}
+
+/* Descripción */
+.descripcion {
+  text-align: left;
+  justify-content: flex-start;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #2E2E2E;
+}
+
+.verde {
+  background-color: #E8EDFF;
+}
+
+.azul {
+  background-color: #EFE7FF;
+}
+
+.amarillo {
+  background-color: #E6F6FF;
+}
+
+/* Celdas */
+.celda {
+  background-color: #F8F9FC; /* fondo evaluados */
+}
+
+/* Footer */
+.footer {
+  font-weight: 600;
+  background-color: #FFFFFF;
+}
+
+.resultado {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.resultado-alto {
+  background-color: #3C4AD1; /* cumplimiento más alto */
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* Vacíos */
+.vacio {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E3EB;
+}
+
+.vacio-footer {
+  background-color: #FFFFFF;
+  color: #707070; /* texto secundario */
+}
+
+/* Select nivel */
+.nivel-select {
+  width: 100%;
+  padding: 4px 6px;
+  border: 1px solid #E0E3EB;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.nivel-select:focus {
+  outline: none;
+  border-color: #4C5FD5;
+  box-shadow: 0 0 3px rgba(76, 95, 213, 0.5);
+}
+
+
+
+
+
+
+
+/* ===============================
+📅 PLAN DE DESARROLLO
+=============================== */
+.plan-desarrollo-container {
+  padding: 30px;
+}
+
+.plan-grid {
+  display: grid;
+  grid-template-columns: 60px 1fr 200px 120px 150px 150px 150px 120px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  border: 1px solid #E0E3EB;
+  margin-top: 20px;
+}
+
+.plan-grid > div {
+  border: 1px solid #E0E3EB;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plan-grid .header {
+  background-color: #4C5FD5; /* azul violeta */
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.plan-grid .celda {
+  background-color: #F8F9FC; /* gris muy claro */
+}
+
+.plan-grid input[type="text"],
+.plan-grid input[type="date"],
+.plan-grid select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #E0E3EB;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+}
+
+.plan-grid input[type="text"]:focus,
+.plan-grid input[type="date"]:focus,
+.plan-grid select:focus {
+  outline: none;
+  border-color: #4C5FD5;
+  box-shadow: 0 0 3px rgba(76, 95, 213, 0.5);
+}
+
+.celda-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.btn-eliminar {
+  background: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.btn-eliminar:hover {
+  background: #c9302c;
+}
+
+/* 📌 Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* 📌 Caja del popup */
+.popup {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 320px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 📌 Botones del popup */
+.popup-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.popup-actions button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-confirmar {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-confirmar:hover {
+  background-color: #218838;
+}
+
+.btn-cancelar {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.btn-cancelar:hover {
+  background-color: #c9302c;
+}
+
+/* ===============================
+📸 Intro Banner con imagen
+=============================== */
+.intro-banner {
+  display: flex;
+  gap: 25px;
+  background: #f5f7ff;
+  padding: 30px;
+  border-radius: 12px;
+  align-items: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.intro-img img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+
+.intro-text h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2E2E2E;
+}
+
+.intro-text p {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.intro-text ul {
+  padding-left: 20px;
+}
+
+.intro-text ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Colores de fondo opcionales por módulo */
+.intro-banner.dnc {
+  background: #f8f5ff;
+}
+
+.intro-banner.plan {
+  background: #f5fff7;
+}
+
+
+/* ===============================
+📊 Dashboard Vacantes
+=============================== */
+.tabla-vacantes {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.tabla-vacantes th, .tabla-vacantes td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.tabla-vacantes th {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+.tabla-vacantes tr:hover {
+  background: #f8f8f8;
+}
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+}
+
+.badge-yellow { background: #f0ad4e; }
+.badge-orange { background: #ff7f50; }
+.badge-brown { background: #8b5e3c; }
+.badge-blue { background: #337ab7; }
+.badge-green { background: #28a745; }
+.badge-gray { background: #6c757d; }
+
+.btn-tabla {
+  background: var(--azul-fondo);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.3s;
+}
+
+.btn-tabla:hover {
+  background: var(--azul-hover);
+}
+
+.header-vacantes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+📌 Modal Nueva Vacante
+=============================== */
+.modal-nueva-vacante {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-nueva-vacante.active {
+  display: flex;
+}
+
+.modal-vacante-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.modal-vacante-content h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #777;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.form-vacante {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-vacante input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ===============================
+📌 Filtros
+=============================== */
+.filtros-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filtros-bar input,
+.filtros-bar select {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+/* ===============================
+📝 Modal Nueva Vacante - Mejorado
+=============================== */
+.form-vacante input,
+.form-vacante select,
+.form-vacante textarea {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+.form-vacante textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 60px;
+}
+
+
+/* ===============================
+🧭 Ajuste topbar para respetar la sidebar
+=============================== */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 240px;         /* 👈 mismo ancho que la sidebar */
+  width: calc(100% - 240px);
+  background-color: var(--blanco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  z-index: 100;
+}
+
+body {
+  padding-top: 70px; /* 👈 espacio para la topbar */
+}
